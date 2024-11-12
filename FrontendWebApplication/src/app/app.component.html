@@ -1,0 +1,52 @@
+<!-- ./app/app.component.html -->
+<div class="flex flex-col min-h-screen">
+  <header class="bg-white shadow dark:bg-gray-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="#" class="flex-shrink-0">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">Your App Name</span>
+          </a>
+          <nav class="hidden md:flex space-x-4 ml-6">
+            <a href="#" class="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Components</a>
+            <a href="#" class="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Templates</a>
+            <a href="#" class="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Docs</a>
+            <a href="#" class="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+          </nav>
+        </div>
+        <div class="flex items-center">
+          <button (click)="toggleTheme()" class="text-gray-900 dark:text-white ml-4">
+            <!-- Toggle Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1M12 20v1m8.25-8.25h-1M3.75 12h-1m17.7 5.7l-.7-.7M4.3 5.3l-.7-.7M20.25 20.25l-.7-.7M3.75 20.25l-.7-.7"></path>
+            </svg>
+          </button>
+          <a href="#" class="ml-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500">Get Started</a>
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="md:hidden ml-4" (click)="toggleMobileMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <nav class="flex flex-col mt-2 space-y-1">
+          <a href="#" class="block text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Components</a>
+          <a href="#" class="block text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Templates</a>
+          <a href="#" class="block text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Docs</a>
+          <a href="#" class="block text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="flex-grow p-4">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="bg-white shadow dark:bg-gray-800 mt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <p class="text-center text-gray-600 dark:text-gray-300">&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
