@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # Distribution
 dist/
+/FrontendWebApplication/.angular

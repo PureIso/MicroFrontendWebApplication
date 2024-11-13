@@ -9,6 +9,8 @@ services:
       - "4200:80"
     depends_on:
       - remote
+    networks:
+      - microfrontend-network
 
   remote:
     build:
@@ -16,3 +18,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4201:80"
+    networks:
+      - microfrontend-network
+
+networks:
+  microfrontend-network:
+    driver: bridge
