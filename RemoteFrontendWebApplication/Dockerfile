@@ -18,7 +18,14 @@ RUN npm run build --prod
 
 # Use nginx to serve the built files
 FROM nginx:alpine
+
+# Copy the custom Nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 COPY --from=build /app/dist/remote-frontend-web-application/browser /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]

@@ -6,9 +6,11 @@ services:
       context: ./FrontendWebApplication
       dockerfile: Dockerfile
     ports:
-      - "4200:80"
+      - "4200:4200"
     depends_on:
       - remote
+    environment:
+      REMOTE_ENTRY_URL: "http://remote:4201/remoteEntry.json"
     networks:
       - microfrontend-network
 
@@ -17,7 +19,7 @@ services:
       context: ./RemoteFrontendWebApplication
       dockerfile: Dockerfile
     ports:
-      - "4201:80"
+      - "4201:4201"
     networks:
       - microfrontend-network
 
