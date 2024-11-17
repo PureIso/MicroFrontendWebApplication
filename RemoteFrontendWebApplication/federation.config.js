@@ -3,7 +3,6 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 module.exports = withNativeFederation({
 
   name: 'RemoteFrontendWebApplication',
-
   exposes: {
     './DashboardComponent': './src/app/features/dashboard/components/dashboard.component.ts',
   },
@@ -19,8 +18,4 @@ module.exports = withNativeFederation({
     'rxjs/webSocket',
     // Add further packages you don't need at runtime
   ]
-
-  // Please read our FAQ about sharing libs:
-  // https://shorturl.at/jmzH0
-  
 });

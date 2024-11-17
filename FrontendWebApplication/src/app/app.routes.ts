@@ -7,9 +7,10 @@ export const routes: Routes = [
   {
     path: 'remoteFrontendWebApplication',
     loadComponent: () =>
-      loadRemoteModule('remoteFrontendWebApplication','./DashboardComponent')
-    .then((m) => m.DashboardComponent),
+      loadRemoteModule({
+        remoteName: 'remoteFrontendWebApplication',
+        exposedModule: './DashboardComponent',
+      }).then((m) => m.DashboardComponent),
   },
   { path: '**', component: HomeComponent },
-  // Add other routes here
 ];

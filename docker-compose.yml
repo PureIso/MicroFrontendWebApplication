@@ -5,8 +5,10 @@ services:
     build:
       context: ./FrontendWebApplication
       dockerfile: Dockerfile
+      args:
+        ENV: docker
     ports:
-      - "4200:80"
+      - "4200:4200"
     depends_on:
       - remote
     networks:
@@ -16,8 +18,10 @@ services:
     build:
       context: ./RemoteFrontendWebApplication
       dockerfile: Dockerfile
+      args:
+        ENV: docker
     ports:
-      - "4201:80"
+      - "4201:4201"
     networks:
       - microfrontend-network
 
