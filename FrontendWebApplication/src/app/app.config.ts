@@ -1,14 +1,14 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { routes } from './app.routes'; // Import your routes configuration
-import { AppComponent } from './app.component'; // Import your AppComponent
+import { routes } from './app.routes';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/components/home.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), // Enable zone change detection
-    provideRouter(routes), // Provide routing configuration
-    HomeComponent, // Register the DashboardComponent
-    AppComponent // Register the AppComponent (not strictly necessary for standalone bootstrapping)
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    HomeComponent,
+    AppComponent
   ]
 };
