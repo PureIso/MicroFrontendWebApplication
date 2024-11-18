@@ -12,5 +12,6 @@ export const routes: Routes = [
         exposedModule: './DashboardComponent',
       }).then((m) => m.DashboardComponent),
   },
-  { path: '**', component: HomeComponent },
+  { path: '**', redirectTo: '' }, // Catch-all for unknown routes
+  // { path: '**', component: HomeComponent },
 ];
