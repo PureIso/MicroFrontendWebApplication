@@ -25,6 +25,8 @@
     "node_modules\\@angular\\platform-browser\\fesm2022\\animations\\async.mjs",
     "node_modules\\@angular\\platform-browser-dynamic\\fesm2022\\platform-browser-dynamic.mjs",
     "node_modules\\@angular\\router\\fesm2022\\router.mjs",
+    "node_modules\\rxjs\\dist\\esm5\\index.js",
+    "node_modules\\rxjs\\dist\\esm5\\operators\\index.js",
     "node_modules\\tslib\\tslib.es6.mjs"
   ]
 }

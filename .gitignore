@@ -401,3 +401,4 @@ FodyWeavers.xsd
 dist/
 /FrontendWebApplication/.angular
 /RemoteFrontendWebApplication/.angular
+/RemoteFrontendWebApplication/coverage

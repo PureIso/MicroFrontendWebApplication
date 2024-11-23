@@ -10,7 +10,7 @@ import { DashboardComponent } from './features/dashboard/components/dashboard.co
   standalone: true,
 })
 export class AppComponent {
-  title = 'Your Angular App';
+  title = 'RemoteFrontendWebApplication';
 
   constructor(private themeService: ThemeService) {
     // Set initial theme
