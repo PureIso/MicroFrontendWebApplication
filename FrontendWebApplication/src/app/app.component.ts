@@ -11,7 +11,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'Your Angular App';
+  title = 'FrontendWebApplication';
   isRemoteAvailable = true;
 
   constructor(private themeService: ThemeService) {

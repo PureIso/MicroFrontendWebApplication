@@ -7,11 +7,17 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Update dependencies
+RUN npm update
+
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the application files
 COPY . .
+
+# Run tests
+RUN npm test
 
 # Build the Angular app based on the provided environment (default is development)
 ARG ENV=development
