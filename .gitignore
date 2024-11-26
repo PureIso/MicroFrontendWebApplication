@@ -403,3 +403,4 @@ dist/
 /RemoteFrontendWebApplication/.angular
 /RemoteFrontendWebApplication/coverage
 /FrontendWebApplication/coverage
+/FrontendWebApplication/cypress/screenshots
