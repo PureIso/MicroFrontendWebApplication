@@ -31,6 +31,14 @@
 						"rebuildDelay": 0,
 						"dev": true,
 						"port": 0
+					},
+					"configurations": {
+						"development": {
+							"buildTarget": "FrontendWebApplication:build:development"
+						},
+						"production": {
+							"buildTarget": "FrontendWebApplication:build:production"
+						}
 					}
 				},
 				"extract-i18n": {

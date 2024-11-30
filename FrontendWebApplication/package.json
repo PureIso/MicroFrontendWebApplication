@@ -3,13 +3,20 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
+		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
 		"test": "jest --coverage",
 		"test:watch": "jest --watch",
-		"build": "ng build",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
 		"start:development": "ng serve --configuration=development",
 		"start:production": "ng serve --configuration=production",
-		"start:docker": "ng serve --configuration=docker",
+		"start:test:e2e": "concurrently --kill-others-on-fail \"npm run serve:test\" \"npm run run:e2e\"",
+		"start:test:component": "concurrently --kill-others-on-fail \"npm run serve:test\" \"npm run run:cypress-component\"",
+		"run:e2e": "wait-on http://localhost:4200 && cypress run --headless --browser=chrome && npm run stop:test",
+		"run:cypress-component": "wait-on http://localhost:4200 && cypress run --headless --browser=chrome --config-file cypress.config.ts && npm run stop:test",
+		"serve:test": "ng serve --port 4200 --configuration=development",
+		"stop:test": "node ./scripts/stop-server.js",
 		"build:development": "ng build --configuration=development",
 		"build:production": "ng build --configuration=production",
 		"build:docker": "ng build --configuration=docker"
@@ -36,11 +43,14 @@
 		"@angular/compiler-cli": "^18.2.12",
 		"@types/jest": "^29.5.14",
 		"@types/node": "^22.9.3",
+		"concurrently": "^8.2.0",
 		"cypress": "^13.16.0",
 		"jest": "^29.7.0",
 		"jest-preset-angular": "^14.3.3",
 		"postcss": "^8.4.49",
+		"ps-tree": "^1.2.0",
 		"tailwindcss": "^3.4.15",
-		"typescript": "~5.5.2"
+		"typescript": "~5.5.2",
+		"wait-on": "^8.0.1"
 	}
 }
