@@ -1,0 +1,18 @@
+{
+  "APP_NAME": "Teie Rakenduse Nimi",
+  "COMPONENTS": "Komponendid",
+  "TEMPLATES": "Mallid",
+  "DOCS": "Dokumentatsioon",
+  "BLOG": "Blogi",
+  "GET_STARTED": "Alustage",
+  "LANGUAGE_SELECTOR": "Valige keel",
+  "LANGUAGES": {
+    "EN": "Inglise",
+    "ET": "Eesti"
+  },
+  "HOST_FRONTEND": {
+    "LOADED": "Host Frontendi Rakendus Laaditud",
+    "DASHBOARD": "Armatuurlaua Sisu",
+    "DASHBOARD_DESC": "Siia läheb teie armatuurlaua sisu. Siia saate lisada diagramme, tabeleid või muid komponente."
+  }
+}

@@ -3,134 +3,140 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"FrontendWebApplication": {
-			"projectType": "application",
-			"schematics": {},
-			"root": "",
-			"sourceRoot": "src",
-			"prefix": "app",
-			"architect": {
-				"build": {
-					"builder": "@angular-architects/native-federation:build",
-					"options": {},
-					"configurations": {
-						"production": {
-							"target": "FrontendWebApplication:esbuild:production"
-						},
-						"development": {
-							"target": "FrontendWebApplication:esbuild:development",
-							"dev": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
-				"serve": {
-					"builder": "@angular-architects/native-federation:build",
-					"options": {
-						"target": "FrontendWebApplication:serve-original:development",
-						"rebuildDelay": 0,
-						"dev": true,
-						"port": 0
-					},
-					"configurations": {
-						"development": {
-							"buildTarget": "FrontendWebApplication:build:development"
-						},
-						"production": {
-							"buildTarget": "FrontendWebApplication:build:production"
-						}
-					}
-				},
-				"extract-i18n": {
-					"builder": "@angular-devkit/build-angular:extract-i18n"
-				},
-				"test": {
-					"builder": "@angular-builders/jest:run",
-					"options": {
-						"jestConfig": "jest.config.js",
-						"tsConfig": "tsconfig.spec.json",
-						"setupFile": "src/setup-jest.ts",
-						"styles": [
-							"src/styles.css"
-						],
-						"scripts": [],
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "src/assets",
-								"output": "/assets"
-							}
-						]
-					}
-				},
-				"esbuild": {
-					"builder": "@angular-devkit/build-angular:application",
-					"options": {
-						"outputPath": "dist/frontend-web-application",
-						"index": "src/index.html",
-						"browser": "src/main.ts",
-						"polyfills": [
-							"zone.js",
-							"es-module-shims"
-						],
-						"tsConfig": "tsconfig.app.json",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "public"
-							}
-						],
-						"styles": [
-							"src/styles.css"
-						],
-						"scripts": []
-					},
-					"configurations": {
-						"production": {
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "500kB",
-									"maximumError": "1MB"
-								},
-								{
-									"type": "anyComponentStyle",
-									"maximumWarning": "2kB",
-									"maximumError": "4kB"
-								}
-							],
-							"optimization": true,
-							"sourceMap": false,
-							"extractLicenses": true,
-							"namedChunks": false,
-							"outputHashing": "none"
-						},
-						"development": {
-							"optimization": false,
-							"sourceMap": true,
-							"extractLicenses": false,
-							"namedChunks": true,
-							"outputHashing": "none"
-						}
-					},
-					"defaultConfiguration": "development"
-				},
-				"serve-original": {
-					"builder": "@angular-devkit/build-angular:dev-server",
-					"configurations": {
-						"production": {
-							"buildTarget": "FrontendWebApplication:esbuild:production"
-						},
-						"development": {
-							"buildTarget": "FrontendWebApplication:esbuild:development"
-						}
-					},
-					"defaultConfiguration": "development",
-					"options": {
-						"port": 4200
-					}
-				}
+	  "FrontendWebApplication": {
+		"projectType": "application",
+		"schematics": {},
+		"root": "",
+		"sourceRoot": "src",
+		"prefix": "app",
+		"architect": {
+		  "build": {
+			"builder": "@angular-architects/native-federation:build",
+			"options": {},
+			"configurations": {
+			  "production": {
+				"target": "FrontendWebApplication:esbuild:production"
+			  },
+			  "development": {
+				"target": "FrontendWebApplication:esbuild:development",
+				"dev": true
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "serve": {
+			"builder": "@angular-architects/native-federation:build",
+			"options": {
+			  "target": "FrontendWebApplication:serve-original:development",
+			  "rebuildDelay": 0,
+			  "dev": true,
+			  "port": 0
+			},
+			"configurations": {
+			  "development": {
+				"buildTarget": "FrontendWebApplication:build:development"
+			  },
+			  "production": {
+				"buildTarget": "FrontendWebApplication:build:production"
+			  }
 			}
+		  },
+		  "extract-i18n": {
+			"builder": "@angular-devkit/build-angular:extract-i18n"
+		  },
+		  "test": {
+			"builder": "@angular-builders/jest:run",
+			"options": {
+			  "jestConfig": "jest.config.js",
+			  "tsConfig": "tsconfig.spec.json",
+			  "setupFile": "src/setup-jest.ts",
+			  "styles": [
+				"src/styles.css"
+			  ],
+			  "scripts": [],
+			  "assets": [
+				{
+				  "glob": "**/*",
+				  "input": "src/assets",
+				  "output": "/assets"
+				}
+			  ]
+			}
+		  },
+		  "esbuild": {
+			"builder": "@angular-devkit/build-angular:application",
+			"options": {
+			  "outputPath": "dist/frontend-web-application",
+			  "index": "src/index.html",
+			  "browser": "src/main.ts",
+			  "polyfills": [
+				"zone.js",
+				"es-module-shims"
+			  ],
+			  "tsConfig": "tsconfig.app.json",
+			  "assets": [
+				{
+				  "glob": "**/*",
+				  "input": "public"
+				},
+				{
+				  "glob": "**/*",
+				  "input": "src/assets",
+				  "output": "/assets"
+				}
+			  ],
+			  "styles": [
+				"src/styles.css"
+			  ],
+			  "scripts": []
+			},
+			"configurations": {
+			  "production": {
+				"budgets": [
+				  {
+					"type": "initial",
+					"maximumWarning": "500kB",
+					"maximumError": "1MB"
+				  },
+				  {
+					"type": "anyComponentStyle",
+					"maximumWarning": "2kB",
+					"maximumError": "4kB"
+				  }
+				],
+				"optimization": true,
+				"sourceMap": false,
+				"extractLicenses": true,
+				"namedChunks": false,
+				"outputHashing": "none"
+			  },
+			  "development": {
+				"optimization": false,
+				"sourceMap": true,
+				"extractLicenses": false,
+				"namedChunks": true,
+				"outputHashing": "none"
+			  }
+			},
+			"defaultConfiguration": "development"
+		  },
+		  "serve-original": {
+			"builder": "@angular-devkit/build-angular:dev-server",
+			"configurations": {
+			  "production": {
+				"buildTarget": "FrontendWebApplication:esbuild:production"
+			  },
+			  "development": {
+				"buildTarget": "FrontendWebApplication:esbuild:development"
+			  }
+			},
+			"defaultConfiguration": "development",
+			"options": {
+			  "port": 4200
+			}
+		  }
 		}
+	  }
 	}
-}
+  }
+  

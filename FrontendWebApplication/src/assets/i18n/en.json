@@ -1,0 +1,18 @@
+{
+  "APP_NAME": "Your App Name",
+  "COMPONENTS": "Components",
+  "TEMPLATES": "Templates",
+  "DOCS": "Docs",
+  "BLOG": "Blog",
+  "GET_STARTED": "Get Started",
+  "LANGUAGE_SELECTOR": "Select Language",
+  "LANGUAGES": {
+    "EN": "English",
+    "ET": "Estonian"
+  },
+  "HOST_FRONTEND": {
+    "LOADED": "Host Frontend Application Loaded",
+    "DASHBOARD": "Dashboard Content",
+    "DASHBOARD_DESC": "This is where your dashboard content will go. You can add charts, tables, or any other components here."
+  }
+}
