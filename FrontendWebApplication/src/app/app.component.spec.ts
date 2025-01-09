@@ -4,6 +4,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from './core/services/theme.service';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import '@types/jest';
 
 describe('AppComponent', () => {
   let component: AppComponent;
