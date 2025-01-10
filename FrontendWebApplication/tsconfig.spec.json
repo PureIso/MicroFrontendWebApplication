@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": ["jest", "node"],
+    "typeRoots": ["node_modules/@types"],
     "emitDecoratorMetadata": true
   },
   "files": ["src/setup-jest.ts"],

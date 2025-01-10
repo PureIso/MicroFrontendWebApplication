@@ -41,6 +41,23 @@ export class AppComponent implements OnInit, OnDestroy {
     const defaultLang = 'en'; // Default language can be dynamically loaded or configured
     this.translateService.setDefaultLang(defaultLang);
     this.translateService.use(defaultLang); // Set the initial language
+
+    // Set the initial title
+    this.translateService
+      .get('TITLE')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((translatedTitle) => {
+        this.title = translatedTitle;
+      });
+
+    // Update the title dynamically when the language changes
+    this.translateService.onLangChange
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.translateService.get('TITLE').subscribe((translatedTitle) => {
+          this.title = translatedTitle;
+        });
+      });
   }
 
   /**
